@@ -1,38 +1,154 @@
-.App {
+.feedback-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 48px 16px;
+  background:
+    radial-gradient(ellipse at 10% 15%, rgba(192, 226, 220, 0.55), transparent 38%),
+    radial-gradient(ellipse at 90% 85%, rgba(229, 215, 245, 0.55), transparent 36%),
+    #f6f8fb;
+}
+
+.feedback-container.MuiContainer-root {
+  padding: 0;
+}
+
+.feedback-card.MuiPaper-root {
+  padding: clamp(28px, 6vw, 52px);
+  border: 1px solid rgba(31, 50, 77, 0.07);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 70px rgba(31, 50, 77, 0.1);
+}
+
+.form-heading {
+  margin-bottom: 32px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form-icon {
+  display: inline-grid;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 18px;
+  place-items: center;
+  border-radius: 18px;
+  color: #176b63;
+  background: #e6f4f1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-icon .MuiSvgIcon-root {
+  font-size: 29px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.eyebrow.MuiTypography-root {
+  margin: 0 0 8px;
+  color: #247a70;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.form-title.MuiTypography-root {
+  color: #1d2b3b;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.form-description.MuiTypography-root {
+  max-width: 390px;
+  margin: 12px auto 0;
+  color: #687789;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.feedback-card .MuiTextField-root {
+  margin-bottom: 12px;
+}
+
+.feedback-card .MuiInputLabel-root {
+  color: #566579;
+}
+
+.feedback-card .MuiOutlinedInput-root {
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.feedback-card .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #247a70;
+}
+
+.feedback-card .MuiInputLabel-root.Mui-focused {
+  color: #247a70;
+}
+
+.feedback-card .MuiFormHelperText-root {
+  min-height: 20px;
+  margin-left: 2px;
+}
+
+.form-actions {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.form-actions .MuiButton-root {
+  min-height: 46px;
+  padding: 0 22px;
+  border-radius: 11px;
+  font-weight: 600;
+  text-transform: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-actions .MuiButton-contained {
+  background-color: #176b63;
+}
+
+.form-actions .MuiButton-contained:hover {
+  background-color: #12564f;
+}
+
+.form-actions .MuiButton-outlined {
+  border-color: #d6dee7;
+  color: #48596c;
+}
+
+.success-message.MuiAlert-root {
+  margin: 0 0 24px;
+  border-radius: 12px;
+}
+
+.privacy-note.MuiTypography-root {
+  margin-top: 24px;
+  color: #8994a2;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .feedback-page {
+    align-items: flex-start;
+    padding: 24px 12px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .feedback-card.MuiPaper-root {
+    padding: 28px 20px;
+    border-radius: 19px;
+  }
+
+  .form-title.MuiTypography-root {
+    font-size: 1.8rem;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions .MuiButton-root {
+    width: 100%;
   }
 }
